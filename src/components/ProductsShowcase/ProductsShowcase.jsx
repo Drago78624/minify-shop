@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import ProductCard from '../ProductCard/ProductCard'
 import "./ProductsShowcase.css"
 
-export default function ProductsShowcase() {
+export default function ProductsShowcase({category}) {
   const [products, setProducts] = useState([])
 
   console.log(products)
 
   useEffect(()=>{
-    fetch("https://fakestoreapi.com/products?limit=5")
+    fetch(`https://fakestoreapi.com/products/category/${category}`)
       .then(res => res.json())
       .then(data => setProducts(data))
   }, [])
@@ -22,7 +22,7 @@ export default function ProductsShowcase() {
 
   return (
     <div>
-      <h3 className='category-heading'>Category</h3>
+      <h3 className='category-heading'>{category}</h3>
       <div className="products-container">
         {products.map(product => {
     return <ProductCard
