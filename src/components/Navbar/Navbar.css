@@ -1,0 +1,45 @@
+.navbar-container {
+    padding: 1rem 2rem;
+    background-color: #411530;
+}
+
+.navbar {
+    max-width: 992px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    column-gap: 20px;
+}
+
+.link, .action {
+    color: lightgray;
+}
+
+.link.active, .action.active {
+    color: #D1512D;
+}
+
+.logo {
+    color: white;
+}
+
+.icon {
+    display: none;
+}
+
+@media screen and (max-width: 33.75rem) {
+    .navbar-container {
+        padding: 1rem 1rem;
+    }
+    .icon {
+        display: inline-block;
+    }
+    .nav-link {
+        display: none;
+    }
+}
