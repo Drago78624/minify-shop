@@ -1,38 +1,45 @@
 import React, { useContext } from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
-import {FaShoppingCart} from "react-icons/fa"
-import {FaHeart} from "react-icons/fa"
-import {FaHome} from "react-icons/fa"
-import {FaShoppingBag} from "react-icons/fa"
+import { FaShoppingCart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
+import { FaShoppingBag } from "react-icons/fa";
 import CartContext from "../../CartContext";
 import FavoritesContext from "../../FavoritesContext";
 
 export default function Navbar() {
-  const {items} = useContext(CartContext)
-  const {favItems} = useContext(FavoritesContext)
+  const { items } = useContext(CartContext);
+  const { favItems } = useContext(FavoritesContext);
   return (
     <div className="navbar-container">
       <nav className="navbar">
-        <h2 className="logo">Minify</h2>
+        <NavLink to="/">
+          <h2 className="logo nav-link">Minify</h2>
+        </NavLink>
         <ul className="links">
           <li>
-            <NavLink 
-              className={({isActive})=>isActive ? "link active" : "link"} 
+            <NavLink
+              className={({ isActive }) => (isActive ? "link active" : "link")}
               to="/"
-
             >
               <span className="home nav-link">Home</span>
-              <span className="icon"><FaHome /></span>
+              <span className="icon">
+                <FaHome />
+              </span>
             </NavLink>
           </li>
           <li>
-            <NavLink 
+            <NavLink
               to="/products"
-              className={({isActive})=>isActive ? "action active" : "action"} 
+              className={({ isActive }) =>
+                isActive ? "action active" : "action"
+              }
             >
               <span className="products nav-link">Products</span>
-              <span className="icon"><FaShoppingBag /></span>
+              <span className="icon">
+                <FaShoppingBag />
+              </span>
             </NavLink>
           </li>
         </ul>

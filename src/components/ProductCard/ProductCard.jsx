@@ -27,8 +27,8 @@ export default function ProductCard({ id, img, title, price }) {
         <p className="product-price">${price}</p>
 
         <div className="product-actions">
-          <FaHeart onClick={() => addToFavorites(id)} />
-          <FaShoppingCart onClick={() => addToCart(id)} />
+          <FaHeart className="cursor" onClick={() => addToFavorites(id)} />
+          <FaShoppingCart className="cursor" onClick={() => addToCart(id)} />
         </div>
       </div>
     </div>

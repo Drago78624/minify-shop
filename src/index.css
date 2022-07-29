@@ -30,3 +30,19 @@ body {
         padding: 1rem;
     }
 }
+
+.categories-products-container {
+  display: flex;
+  gap: 150px;
+  background-color: lightcoral;
+}
+
+.category-btn {
+  display: block;
+}
+
+.categories-products {
+  display:  flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
