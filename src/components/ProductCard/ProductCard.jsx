@@ -2,6 +2,8 @@ import React from 'react'
 import "./ProductCard.css"
 import {FaShoppingCart} from "react-icons/fa"
 import {FaHeart} from "react-icons/fa"
+import {FaRegHeart} from "react-icons/fa"
+
 
 export default function ProductCard({img, title, price}) {
 

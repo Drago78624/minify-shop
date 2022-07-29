@@ -12,9 +12,8 @@ export default function Home() {
   return (
     <div>
       {categories.map(category => {
-        return <ProductsShowcase category={category} />
+        return <ProductsShowcase key={category} category={category} />
       })}
-      <ProductsShowcase />
     </div>
   );
 }

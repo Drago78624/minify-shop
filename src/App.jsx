@@ -7,21 +7,24 @@ import Favorites from "./pages/Favorites";
 import Cart from "./pages/Cart";
 import Error from "./pages/Error";
 import Layout from "./components/Layout/Layout";
+import { CartProvider } from "./CartContext";
 
 function App() {
   return (
-    <HashRouter>
+    <CartProvider>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/products" element={<Products />} />
-            <Route path="products/product" element={<Product />} />
+            <Route path="/products/:productId" element={<Product />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="*" element={<Error />} />
           </Route>
         </Routes>
       </HashRouter>
+    </CartProvider>
   );
 }
 

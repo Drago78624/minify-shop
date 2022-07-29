@@ -1,0 +1,10 @@
+.single-product {
+    display:  flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.img {
+    max-width: 500px;
+    width: 100%;
+}

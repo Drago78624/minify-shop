@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 import {FaShoppingCart} from "react-icons/fa"
 import {FaHeart} from "react-icons/fa"
 import {FaHome} from "react-icons/fa"
 import {FaShoppingBag} from "react-icons/fa"
+import CartContext from "../../CartContext";
 
 export default function Navbar() {
+  const {items} = useContext(CartContext)
   return (
     <div className="navbar-container">
       <nav className="navbar">
@@ -36,11 +38,13 @@ export default function Navbar() {
           <li>
             <NavLink className="action" to="/favorites">
               <FaHeart />
+              <span>0</span>
             </NavLink>
           </li>
           <li>
             <NavLink className="action" to="/cart">
               <FaShoppingCart />
+              <span>{items.length}</span>
             </NavLink>
           </li>
         </ul>
