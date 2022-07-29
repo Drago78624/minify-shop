@@ -6,9 +6,11 @@ import {FaHeart} from "react-icons/fa"
 import {FaHome} from "react-icons/fa"
 import {FaShoppingBag} from "react-icons/fa"
 import CartContext from "../../CartContext";
+import FavoritesContext from "../../FavoritesContext";
 
 export default function Navbar() {
   const {items} = useContext(CartContext)
+  const {favItems} = useContext(FavoritesContext)
   return (
     <div className="navbar-container">
       <nav className="navbar">
@@ -38,7 +40,7 @@ export default function Navbar() {
           <li>
             <NavLink className="action" to="/favorites">
               <FaHeart />
-              <span>0</span>
+              <span>{favItems.length}</span>
             </NavLink>
           </li>
           <li>

@@ -3,6 +3,14 @@ const CartContext = createContext();
 export function CartProvider({ children }) {
   const [items, setItems] = useState([]);
 
+  function deleteCartItem(id){
+    setItems(prevItems => {
+      return prevItems.filter((prevItem)=>{
+        return prevItem != id
+      })
+    })
+  }
+
   function addToCart(id) {
     setItems((prevItems) => {
       return [
@@ -12,7 +20,7 @@ export function CartProvider({ children }) {
     });
   }
   return (
-    <CartContext.Provider value={{ items, addToCart }}>{children}</CartContext.Provider>
+    <CartContext.Provider value={{ items, addToCart, deleteCartItem }}>{children}</CartContext.Provider>
   );
 }
 export default CartContext;

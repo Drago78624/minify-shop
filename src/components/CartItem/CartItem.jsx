@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { MdDelete } from "react-icons/md";
+import CartContext from '../../CartContext';
 
 
 export default function CartItem({ cartItemId }) {
   const [cartItem, setCartItem] = useState({})
+  const {deleteCartItem} = useContext(CartContext)
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${cartItemId}`)
@@ -21,7 +23,7 @@ export default function CartItem({ cartItemId }) {
             {cartItem.title}
         </div>
         <div className="delete-cart">
-            <MdDelete />
+            <MdDelete onClick={()=>deleteCartItem(cartItemId)} />
         </div>
     </div>
   )

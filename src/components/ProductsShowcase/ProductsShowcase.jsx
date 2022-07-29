@@ -22,13 +22,13 @@ export default function ProductsShowcase({ category }) {
       <div className="products-container">
         {products.map((product) => {
           return (
-            <Link key={product.id} to={`/products/${product.id}`}>
               <ProductCard
+                key={product.id}
+                id={product.id}
                 img={product.image}
                 title={product.title}
                 price={product.price}
               />
-            </Link>
           );
         })}
       </div>

@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import CartContext from "../../CartContext";
+import FavoritesContext from "../../FavoritesContext";
 
 export default function SingleProduct(props) {
   const [singleProduct, setSingleProduct] = useState();
   const {addToCart} = useContext(CartContext)
+  const {addToFavorites} = useContext(FavoritesContext)
   
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${props.productId}`)
@@ -17,7 +19,7 @@ export default function SingleProduct(props) {
           <img className="img" style={{maxWidth: "250px"}} src={singleProduct?.image} alt="" />
         </div>
         <div className="sp-content">
-          <button>add to favorites</button>
+          <button onClick={()=>addToFavorites(props.productId)}>add to favorites</button>
           <h2>{singleProduct?.title}</h2>
           <p>{singleProduct?.price}</p>
           <p>{singleProduct?.description}</p>

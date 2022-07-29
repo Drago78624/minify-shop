@@ -8,10 +8,12 @@ import Cart from "./pages/Cart";
 import Error from "./pages/Error";
 import Layout from "./components/Layout/Layout";
 import { CartProvider } from "./CartContext";
+import { FavoritesProvider } from "./FavoritesContext";
 
 function App() {
   return (
     <CartProvider>
+      <FavoritesProvider>
       <HashRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -24,6 +26,7 @@ function App() {
           </Route>
         </Routes>
       </HashRouter>
+      </FavoritesProvider>
     </CartProvider>
   );
 }
