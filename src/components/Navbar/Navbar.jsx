@@ -15,7 +15,7 @@ export default function Navbar() {
     <div className="navbar-container">
       <nav className="navbar">
         <NavLink to="/">
-          <h2 className="logo nav-link">Minify</h2>
+          <h2 className="logo">Minify</h2>
         </NavLink>
         <ul className="links">
           <li>

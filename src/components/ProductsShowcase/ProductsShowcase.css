@@ -1,7 +1,7 @@
 .category-heading {
     padding: 0.5rem 1rem;
-    color: #F5C7A9;
-    background-color: #D1512D;
+    color: var(--white);
+    background-color: var(--secondary);
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     text-transform: uppercase;
@@ -13,4 +13,5 @@
   gap: 20px;
   padding: 1rem 0;
   overflow-x: auto;
+  /* background-color: var(--white); */
 }

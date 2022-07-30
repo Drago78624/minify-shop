@@ -1,6 +1,6 @@
 .navbar-container {
     padding: 1rem 2rem;
-    background-color: #411530;
+    background-color: var(--primary);
 }
 
 .navbar {
@@ -17,15 +17,15 @@ ul {
 }
 
 .link, .action {
-    color: lightgray;
+    color: var(--white);
 }
 
 .link.active, .action.active {
-    color: #D1512D;
+    color: var(--secondary);
 }
 
 .logo {
-    color: white;
+    color: var(--white);
 }
 
 .icon {
@@ -42,4 +42,10 @@ ul {
     .nav-link {
         display: none;
     }
+}
+
+.action {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }

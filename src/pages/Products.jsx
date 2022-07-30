@@ -24,7 +24,8 @@ export default function Products() {
   return (
     <div className="categories-products-container">
       <div className="categories-drawer">
-      <button className='category-btn' onClick={()=>changeCategory("")}>All</button>
+        <h1 className="categories-heading">Categories</h1>
+      <button className='category-btn all-btn' onClick={()=>changeCategory("")}>All</button>
         {categories.map(category => {
           return <button className='category-btn' onClick={()=>changeCategory(category)} >{category}</button>
         })}
