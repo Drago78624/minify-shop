@@ -1,10 +1,20 @@
 import React, { useEffect, useState } from "react";
+import { CSSProperties } from "react";
+import ClipLoader from "react-spinners/ClipLoader";
+import MoonLoader from "react-spinners/MoonLoader";
 import ProductCard from "../ProductCard/ProductCard";
 import "./ProductsShowcase.css";
 import { Link } from "react-router-dom";
 
+const override = {
+  display: "block",
+  margin: "0 auto",
+  borderColor: "var(--secondary)",
+};
+
 export default function ProductsShowcase({ category }) {
   const [products, setProducts] = useState([]);
+  let [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/category/${category}`)
@@ -31,6 +41,7 @@ export default function ProductsShowcase({ category }) {
               />
           );
         })}
+      
       </div>
     </div>
   );

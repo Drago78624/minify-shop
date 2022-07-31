@@ -1,10 +1,68 @@
 .single-product {
-    display:  flex;
-    justify-content: space-between;
-    gap: 50px;
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 2rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 30px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
-
-.img {
-    max-width: 500px;
+.sp-img-container {
+    text-align: center;
+}
+.sp-img {
+    max-width: 200px;
     width: 100%;
 }
+
+.sp-btn {
+    display: flex;
+    align-items: center;
+    padding: 0.5em 1em;
+    margin-bottom: 1rem;
+    border: 0;
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 5px;
+    transition: transform 200ms, background-color 200ms;
+    -webkit-transition: transform 200ms, background-color 200ms;
+    -moz-transition: transform 200ms, background-color 200ms;
+    -ms-transition: transform 200ms, background-color 200ms;
+    -o-transition: transform 200ms, background-color 200ms;
+    cursor: pointer;
+  }
+  
+  .sp-btn:active {
+    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+  }
+
+.sp-icon {
+    margin-right: 0.5rem;
+}
+
+.sp-title, .sp-price {
+    margin-bottom: 0.5rem;
+}
+
+.sp-price {
+    font-size: 1.2rem;
+}
+
+.sp-desc {
+    margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 48rem) {
+    .single-product {
+        grid-template-columns: 1fr 2fr;
+        /* gap: 0px; */
+    }
+  }

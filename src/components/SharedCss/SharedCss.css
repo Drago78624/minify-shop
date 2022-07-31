@@ -1,0 +1,42 @@
+.fc-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--white);
+    padding: 0.5rem;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.fc-item:not(:last-child) {
+    margin-bottom: 1rem;
+}
+.fc-title {
+    font-size: 0.9rem;
+}
+.fc-img {
+    max-width: 50px;
+    width: 100%;
+}
+
+.delete-fc {
+    cursor: pointer;
+}
+
+@media screen and (min-width: 40rem) {
+    .fc-item {
+        padding: 1rem;
+    }
+    .fc-img {
+        max-width: 70px;
+    }
+    .fc-title {
+        font-size: 1rem;
+    }
+    .delete-fc {
+        font-size: 1.4rem;
+    }
+}

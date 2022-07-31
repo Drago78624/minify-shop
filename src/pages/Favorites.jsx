@@ -7,9 +7,9 @@ export default function Favorites() {
 
   return (
     <div>
-      {favItems.map((itemId) => {
+      {favItems.length ? favItems.map((itemId) => {
         return <FavoriteItem key={itemId} favoritesItemId={itemId} />;
-      })}
+      }) : <div className="no-items">No items in favorites</div>}
     </div>
   );
 }

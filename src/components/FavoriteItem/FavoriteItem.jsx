@@ -1,11 +1,15 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { MdDelete } from "react-icons/md";
 import FavoritesContext from '../../FavoritesContext';
-
+import "../SharedCss/SharedCss.css"
 
 export default function FavoritesItem({ favoritesItemId }) {
   const [favoritesItem, setFavoritesItem] = useState({})
   const {deleteFavoriteItem} = useContext(FavoritesContext)
+
+  function truncate(str) {
+    return str.length > 10 ? str.substring(0, 25) + "..." : str;
+  }
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${favoritesItemId}`)
@@ -14,15 +18,14 @@ export default function FavoritesItem({ favoritesItemId }) {
   }, []);
 
   return (
-    <div className='Favorites-item' style={{display: "flex", justifyContent: "space-between", backgroundColor: "white", marginBottom: "1rem"}}>
-      {favoritesItemId}
-        <div className="Favorites-img">
-            <img style={{maxWidth: "100px", width: "100%"}} src={favoritesItem.image} alt="" />
+    <div className='fc-item'>
+        <div className="fc-img-container">
+            <img className='fc-img'src={favoritesItem.image} alt="" />
         </div>
-        <div className="Favorites-title">
+        <div className="fc-title">
             {favoritesItem.title}
         </div>
-        <div className="delete-Favorites">
+        <div className="delete-fc">
             <MdDelete onClick={()=>deleteFavoriteItem(favoritesItemId)} />
         </div>
     </div>

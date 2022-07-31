@@ -7,9 +7,12 @@ export default function Cart() {
 
   return (
     <div>
-      {items.map((itemId) => {
+      {items.length ? items.map((itemId) => {
         return <CartItem key={itemId} cartItemId={itemId} />;
-      })}
+      }) : <div className="no-items">No items in cart</div>}
+      {items.length ? <div className="proceed">
+        <button className="proceed-btn">Proceed to checkout</button>
+      </div> : null}
     </div>
   );
 }
