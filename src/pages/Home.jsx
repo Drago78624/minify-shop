@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import ProductsShowcase from "../components/ProductsShowcase/ProductsShowcase";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import img1 from "../assets/1.avif"
+import img2 from "../assets/2.avif"
+import img3 from "../assets/3.avif"
 
 export default function Home() {
   const [categories, setCategories] = useState([
@@ -15,16 +18,13 @@ export default function Home() {
     <div>
       <Carousel>
                 <div>
-                    <img src="../assets/1.avif" />
-                    <p className="legend">Legend 1</p>
+                    <img className="carousel-img" src={img1} />
                 </div>
                 <div>
-                    <img src="../assets/2.avif" />
-                    <p className="legend">Legend 2</p>
+                    <img className="carousel-img" src={img2} />
                 </div>
                 <div>
-                    <img src="../assets/3.avif" />
-                    <p className="legend">Legend 3</p>
+                    <img className="carousel-img" src={img3} />
                 </div>
             </Carousel>
       {categories.map(category => {
