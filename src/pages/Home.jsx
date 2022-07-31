@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <div>
-      <Carousel>
+      <Carousel className="carousel" showStatus={false} autoPlay={true} interval={1500} infiniteLoop={true} showThumbs={false} stopOnHover={true}>
                 <div>
                     <img className="carousel-img" src={img1} />
                 </div>
