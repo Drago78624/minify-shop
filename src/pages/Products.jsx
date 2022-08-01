@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard/ProductCard";
+import { BsSearch } from "react-icons/bs";
 
 export default function Products() {
   const [category, setCategory] = useState("")
@@ -30,6 +31,15 @@ export default function Products() {
           return <button className='category-btn' onClick={()=>changeCategory(category)} >{category}</button>
         })}
       </div>
+      <div>
+        <div className="searchbar-container">
+          <div className="searchbar">
+            <input type="text" className="search" placeholder="Search Products" />
+            <div className="search-icon">
+              <BsSearch />
+            </div>
+          </div>
+        </div>
       <div className="categories-products">
       {products.map((product) => {
           return (
@@ -42,6 +52,7 @@ export default function Products() {
               />
           );
         })}
+      </div>
       </div>
     </div>
   );
