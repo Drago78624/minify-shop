@@ -13,6 +13,18 @@ import { Link } from "react-router-dom";
 export default function ProductCard({ id, img, title, price }) {
   const { addToCart } = useContext(CartContext);
   const { addToFavorites } = useContext(FavoritesContext);
+  const { deleteFavoriteItem } = useContext(FavoritesContext);
+  const [isFavorite, setIsFavorite] = useState(false)
+
+
+  function favorite(id){
+    if(isFavorite){
+      deleteFavoriteItem(id)
+      setIsFavorite(prevState => !prevState)
+    }else{
+      setIsFavorite(prevState => !prevState)
+    }
+  }
 
   function truncate(str) {
     return str.length > 10 ? str.substring(0, 7) + "..." : str;
@@ -30,7 +42,10 @@ export default function ProductCard({ id, img, title, price }) {
         <p className="product-price">${price}</p>
 
         <div className="product-actions">
-          <FaHeart className="cursor" onClick={() => addToFavorites(id)} />
+          {isFavorite ? <FaHeart className="cursor heart-icon" onClick={() => favorite(id)} /> : 
+          <FaRegHeart className="cursor heart-icon" onClick={() => {
+            addToFavorites(id);
+            favorite(id)}} />}
           <FaShoppingCart className="cursor" onClick={() => addToCart(id)} />
         </div>
       </div>

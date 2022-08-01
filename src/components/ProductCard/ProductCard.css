@@ -40,3 +40,7 @@
 .cursor {
     cursor: pointer;
 }
+
+.heart-icon {
+    color: var(--favorite);
+}

@@ -3,6 +3,7 @@ const FavoritesContext = createContext();
 export function FavoritesProvider({ children }) {
   const [favItems, setFavItems] = useState([]);
 
+
   function deleteFavoriteItem(id){
     setFavItems(prevItems => {
       return prevItems.filter((prevItem)=>{
